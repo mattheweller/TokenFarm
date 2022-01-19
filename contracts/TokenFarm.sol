@@ -12,18 +12,18 @@ contract TokenFarm is Ownable {
     mapping(address => address) public tokenPriceFeedMapping;
     address[] public stakers;
     address[] public allowedTokens;
-    IERC20 public dappToken;
+    IERC20 public mattToken;
 // stakeTokens - DONE!
 // unStakeTokens - DONE
 // issueTokens - DONE!
 // addAllowedTokens - DONE!
 // getValue - DONE!
 
-// 100 ETH 1:1 for every 1 ETH, we give 1 DappToken
-// 50 ETH and 50 DAI staked, and we want to give a reward of 1 DAPP / 1 DAI
+// 100 ETH 1:1 for every 1 ETH, we give 1 MattToken
+// 50 ETH and 50 DAI staked, and we want to give a reward of 1 MATT / 1 DAI
 
-    constructor(address _dappTokenAddress) public {
-        dappToken = IERC20(_dappTokenAddress);
+    constructor(address _mattTokenAddress) public {
+        mattToken = IERC20(_mattTokenAddress);
     }
 
     function setPriceFeedContract(address _token, address _priceFeed)
@@ -42,7 +42,7 @@ contract TokenFarm is Ownable {
         ){
             address recipient = stakers[stakersIndex];
             uint256 userTotalValue = getUserTotalValue(recipient);
-            dappToken.transfer(recipient, userTotalValue);
+            mattToken.transfer(recipient, userTotalValue);
         }
     }
 

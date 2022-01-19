@@ -2,7 +2,7 @@
 /// <reference types="react-scripts" />
 import React, { useEffect, useState } from "react"
 import eth from "../eth.png"
-import dapp from "../dapp.png"
+import matt from "../matt.png"
 import dai from "../dai.png"
 import { YourWallet } from "./yourWallet"
 import { TokenFarmContract } from "./TokenFarmContract"
@@ -39,16 +39,16 @@ export const Main = () => {
   const classes = useStyles()
   const networkName = chainId ? helperConfig[chainId] : "ganache"
   console.log("Kovan Chain ID: ", chainId)
-  // We need to pull the DAPP token address from the .json file written to by Brownie
-  const dappTokenAddress = chainId ? networkMapping[String(chainId)]["DappToken"][0] : constants.AddressZero
+  // We need to pull the MATT token address from the .json file written to by Brownie
+  const mattTokenAddress = chainId ? networkMapping[String(chainId)]["MattToken"][0] : constants.AddressZero
   const wethTokenAddress = chainId ? brownieConfig["networks"][networkName]["weth_token"] : constants.AddressZero
   const fauTokenAddress = chainId ? brownieConfig["networks"][networkName]["fau_token"] : constants.AddressZero
-  console.log("DappToken Address: ", dappTokenAddress)
+  console.log("MattToken Address: ", mattTokenAddress)
   /**
    * Our single central location to store info on support tokens.
    * This is the only place you'll need to add a new token to get it to display in the UI!
    * 
-   * Modularize the addresses like with `dappTokenAddress`
+   * Modularize the addresses like with `mattTokenAddress`
    * To make it chain agnostic
    */
   const supportedTokens: Array<Token> = [
@@ -63,9 +63,9 @@ export const Main = () => {
       name: "FAU",
     },
     {
-      image: dapp,
-      address: dappTokenAddress,
-      name: "DAPP",
+      image: matt,
+      address: mattTokenAddress,
+      name: "MATT",
     },
   ]
 
@@ -104,7 +104,7 @@ export const Main = () => {
           root: classes.title,
         }}
       >
-        Dapp Token Farm
+        Token Farm
       </Typography>
       <YourWallet supportedTokens={supportedTokens} />
       <TokenFarmContract supportedTokens={supportedTokens} />

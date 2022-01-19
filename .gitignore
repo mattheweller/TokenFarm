@@ -110,3 +110,4 @@ dist
 __pycache__
 .history
 .hypothesis/
+Venv/
