@@ -1,7 +1,10 @@
 # TokenFarm
 
+Stake fake coins to yield fake rewards!
+
+This is my capstone project from [Patrick Collins' amazing freeCodeCamp + ChainLink's full course](https://github.com/smartcontractkit/full-blockchain-solidity-course-py)
+
 ## Summary 
-Stake fake coins to yield fake rewards! This is my project for the awesome capstone course from (Patrick Collins' amazing freeCodeCamp + ChainLink's full course](https://github.com/smartcontractkit/full-blockchain-solidity-course-py)
 
 With this app, you can interact with a Typescript React UI which allows you to:
 
@@ -10,6 +13,7 @@ With this app, you can interact with a Typescript React UI which allows you to:
 - `getUserTotalValue`: Get the total value that users have supplied based on calculations from the Chainlink Price Feeds. 
 - `issueTokens`: Issue a reward to the users staking on your platform!
 
+## How to yield your staking "reward"
 The admin of the deployed contract can execute the issueTokens function to pay out a "reward" for staking your tokens within this app.
 
 If you are playing with the deployed version of this app at [link](), I can send you your reward if you [tweet at me](https://twitter.com/intent/tweet?text=@matteller%20I%20want%20my%20MATT%20tokens!)!
@@ -100,7 +104,12 @@ pip install autoflake
 autoflake --in-place --remove-unused-variables -r .
 black .
 ```
+## In App
 
+The app allows for three mock tokens:
+- The custom minted MATT token, which you can pay yourself after deploying the ERC20 token contract
+- FAU token, which you can get from [this faucet](https://erc20faucet.com/)
+- WETH token, which you can get from [this Kovan ETH faucet](https://faucets.chain.link/kovan) THEN by calling the deposit function from [this contract](https://kovan.etherscan.io/address/0xd0a1e359811322d97991e03f863a0c30c2cf029c)
 # Resources
 
 To get started with Brownie:
