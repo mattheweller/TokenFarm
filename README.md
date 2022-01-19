@@ -30,6 +30,7 @@ Please install or have installed the following:
 This app uses Brownie. [Brownie](https://eth-brownie.readthedocs.io/en/stable/) is a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine.
 
 1. [Install Brownie](https://eth-brownie.readthedocs.io/en/stable/install.html), if you haven't already. Here is a simple way to install brownie.
+*NB: There is a breaking change within Python 3.10 and cytoolz that prevents a clean install of eth-brownie. I recommend downgrading to Python 3.9 
 
 ```bash
 pip install --user pipx
