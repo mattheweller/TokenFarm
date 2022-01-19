@@ -121,9 +121,8 @@ To get started with Brownie:
 * For more in-depth information, read the [Brownie documentation](https://eth-brownie.readthedocs.io/en/stable/).
 * [Create React App](https://create-react-app.dev/docs/adding-typescript/) for front end fun
 * [Materials-UI](https://material-ui.com/)
+* [useDApp](https://usedapp.io/)
 
-Shoutout to [Matt Durkin](https://twitter.com/mdurkin92) on twitter for creating the UI!
-Shoutout to [Gregory from Dapp University](https://www.dappuniversity.com/) for the inspiration for this!
 
 Any questions? Open an issue or tweet at me
 
