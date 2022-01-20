@@ -1,9 +1,13 @@
 {
   "42": {
     "MattToken": [
+      "0xcd05128679c91ff05233728029De86dDF9E2689a",
+      "0xB41A5e9df7a7Fbd745Ef06828626dd2480305155",
       "0x457dc1113665f8B5EC5F33c2effa4eefe904E2b9"
     ],
     "TokenFarm": [
+      "0xAf83C0db471770ce49E4e459CF5BC9439C109473",
+      "0x97B3D4CBf01aE5800DEB1c0812Cf059751cf4506",
       "0xed9Ee785b32C7Ce1DdF22dAde9bC36cfE3107D23"
     ]
   }

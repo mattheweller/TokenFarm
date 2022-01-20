@@ -43,6 +43,10 @@ export const Unstake = ({ token }: UnstakeFormProps) => {
     showUnstakeSuccess && setShowUnstakeSuccess(false)
   }
 
+  const handleTweet = () => {
+    window.open("https://twitter.com/intent/tweet?text=@matteller%20I%20want%20my%20MATT%20tokens!")
+  }
+
   useEffect(() => {
     if (
       notifications.filter(
@@ -76,6 +80,14 @@ export const Unstake = ({ token }: UnstakeFormProps) => {
           disabled={isMining}
         >
           {isMining ? <CircularProgress size={26} /> : `Unstake all ${name}`}
+        </Button>
+        <Button
+          color="primary"
+          variant="contained"
+          size="large"
+          onClick={handleTweet}
+        >
+          Tweet @ me to get your $MATT reward!
         </Button>
       </div>
       <Snackbar

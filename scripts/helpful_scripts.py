@@ -7,6 +7,7 @@ from brownie import (
     MockV3Aggregator,
     MockWETH,
     MockDAI,
+    TokenFarm,
     Contract,
 )
 
@@ -25,6 +26,7 @@ contract_to_mock = {
     "dai_usd_price_feed": MockV3Aggregator,
     "fau_token": MockDAI,
     "weth_token": MockWETH,
+    "TokenFarm": TokenFarm
 }
 
 
@@ -39,7 +41,7 @@ def get_account(index=None, id=None):
 
 
 def get_contract(contract_name):
-    """If you want to use this function, go to the brownie config and add a new entry for
+    """If you want to use this function, go to the brownie-config.yaml and add a new entry for
     the contract that you want to be able to 'get'. Then add an entry in the in the variable 'contract_to_mock'.
     You'll see examples like the 'link_token'.
         This script will then either:
@@ -117,3 +119,18 @@ def deploy_mocks(decimals=DECIMALS, initial_value=INITIAL_PRICE_FEED_VALUE):
     print("Deploying Mock WETH")
     weth_token = MockWETH.deploy({"from": account})
     print(f"Deployed to {weth_token.address}")
+
+
+def issue_tokens():
+    """
+    Once you have users that have staked tokens, you can call this function.
+    Note that it relies on get_contract, so be mindful to correctly configure
+    your Token Farm contract into brownie-config.yaml as well as the contract_to_mock dict
+    """
+    account = get_account()
+    print(f"Issue Tokens called by: {account}")
+    token_farm = get_contract("TokenFarm")
+    print(f"TokenFarm contract called to issue tokens: {token_farm}")
+    tx = token_farm.issueTokens({"from": account})
+    tx.wait(1)
+
